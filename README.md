@@ -9,5 +9,5 @@ Python library to convert Windows SIDs
 
 ## Sponsored by
 
-* [Red Hat](www.redhat.com)
-* [Baloise Group](www.baloise.com)
+* [Red Hat](http://www.redhat.com)
+* [Baloise Group](http://www.baloise.com)
