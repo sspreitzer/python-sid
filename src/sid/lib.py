@@ -26,6 +26,7 @@ SOFTWARE.
 import base64
 import struct
 import string
+import binascii
 
 
 SID_STRING = 0
@@ -54,6 +55,12 @@ class sid(object):
             return
         else:
             raise sidExceptionNoSuchType()
+    
+    def ldap(self):
+        '''
+        Return ldap filter version of sid
+        '''
+        return self.byteldap(self._sid)
     
     def binary(self):
         '''
@@ -145,6 +152,19 @@ class sid(object):
         ret += cls.longToByte(sid[2], False, 6)
         for i in range(3, len(sid)):
             ret += cls.longToByte(sid[i])
+        return ret
+    
+    @classmethod
+    def byteldap(cls, strsid):
+        '''
+        Encode a sid into AD ldap search form
+            strsid - SID to encode
+        '''
+        ret = ''
+        a = binascii.hexlify(cls.byte(strsid))
+        print a
+        for i in range(0, len(a), 2):
+            ret += '\\' + a[i:i+2]
         return ret
     
     @classmethod
