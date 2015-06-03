@@ -1,6 +1,4 @@
-'''
-The lib contains exceptions, constants and the sid class
-'''
+'''The lib contains exceptions, constants and the sid class'''
 
 
 import base64
@@ -15,23 +13,18 @@ SID_BASE64 = 2
 
 
 class sidException(Exception):
-    '''
-    Base exception derived from Exception class
-    '''
+    '''Base exception derived from Exception class'''
     pass
 
 
 class sidExceptionNoSuchType(sidException):
-    '''
-    No such type exception. Used when class is not initialized properly.
-    '''
+    '''No such type exception. Used when class is not initialized properly.'''
     pass
 
 
 class sid(object):
-    '''
-    Class to manage Windows SIDs
-    '''
+    '''Class to manage Windows SIDs'''
+
     def __init__(self, data, sidtype=SID_STRING):
         '''
         Initialize class with either a string, binary or base64 sid.
@@ -50,39 +43,27 @@ class sid(object):
             raise sidExceptionNoSuchType()
     
     def ldap(self):
-        '''
-        Return ldap filter version of sid
-        '''
+        '''Return ldap filter version of sid'''
         return self.byteldap(self._sid)
     
     def binary(self):
-        '''
-        Return binary version of sid
-        '''
+        '''Return binary version of sid'''
         return self.byte(self._sid)
 
     def base64(self):
-        '''
-        Return base64 encoded version of binary sid
-        '''
+        '''Return base64 encoded version of binary sid'''
         return self.byteB64(self._sid)
     
     def str(self):
-        '''
-        Return sid as a string
-        '''
+        '''Return sid as a string'''
         return str(self)
     
     def __str__(self):
-        '''
-        sid class can be used as a string
-        '''
+        '''sid class can be used as a string'''
         return self._sid
     
     def __repr__(self):
-        '''
-        Return representation of sid
-        '''
+        '''Return representation of sid'''
         return repr( self._sid )
 
     @classmethod
