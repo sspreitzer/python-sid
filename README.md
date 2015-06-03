@@ -5,7 +5,13 @@ Python library to convert Windows SIDs
 ## TODO
 
 * Documentation in README.md
-* Write setup.py
+
+## Changelog
+* 0.1
+  * Add setup.py
+  * Add ldap filter feature
+  * Fix sponsor links
+  * Initial commit
 
 ## Sponsored by
 
