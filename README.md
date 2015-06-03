@@ -8,6 +8,7 @@ Python library to convert Windows SIDs
 
 ## Changelog
 * 0.1
+  * Fix docstrings for documentation
   * Add setup.py
   * Add ldap filter feature
   * Fix sponsor links
