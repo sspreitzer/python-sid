@@ -2,9 +2,33 @@
 
 Python library to convert Windows SIDs
 
-## TODO
+## Example
 
-* Documentation in README.md
+String input
+```python
+import sid
+
+mysid = sid.sid('S-1-5-21-2127521184-1604012920-1887927527-72713')
+print mysid.base64()
+```
+
+Output
+```
+AQUAAAAAAAUVAAAAoGXPfnhLm1/nfIdwCRwBAA==
+```
+
+Base46 input
+```python
+import sid
+
+mysid = sid.sid('AQUAAAAAAAUVAAAAoGXPfnhLm1/nfIdwCRwBAA==', sid.SID_BASE64)
+print mysid
+```
+
+Output
+```
+S-1-5-21-2127521184-1604012920-1887927527-72713
+```
 
 ## Changelog
 * 0.1
