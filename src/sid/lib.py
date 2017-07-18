@@ -1,9 +1,7 @@
 '''The lib contains exceptions, constants and the sid class'''
 
-
 import base64
 import struct
-import string
 import binascii
 
 
@@ -90,10 +88,10 @@ class sid(object):
             raise Exception('Bytes too long. Needs to be <= 8 or 64bit')
         else:
             if little_endian:
-                a = string.ljust(byte, 8, '\x00')
+                a = byte.ljust(8, b'\x00')
                 return struct.unpack('<q', a)[0]
             else:
-                a = string.rjust(byte, 8, '\x00')
+                a = byte.rjust(8, b'\x00')
                 return struct.unpack('>q', a)[0]  
  
     @classmethod
@@ -104,7 +102,7 @@ class sid(object):
         '''
         ret = 'S'
         sid = []
-        sid.append(cls.byteToLong(byte[0]))
+        sid.append(cls.byteToLong(byte[0:1]))
         sid.append(cls.byteToLong(byte[2:2+6], False))
         for i in range(8, len(byte), 4):
             sid.append(cls.byteToLong(byte[i:i+4]))
@@ -118,8 +116,8 @@ class sid(object):
         Convert a SID into bytes
             strdsid - SID to convert into bytes
         '''
-        sid = string.split(strsid, '-')
-        ret = ''
+        sid = str.split(strsid, '-')
+        ret = bytearray()
         sid.remove('S')
         for i in range(len(sid)):
             sid[i] = int(sid[i])
@@ -138,8 +136,7 @@ class sid(object):
             strsid - SID to encode
         '''
         ret = ''
-        a = binascii.hexlify(cls.byte(strsid))
-        print a
+        a = binascii.hexlify(cls.byte(strsid)).decode('utf-8')
         for i in range(0, len(a), 2):
             ret += '\\' + a[i:i+2]
         return ret
