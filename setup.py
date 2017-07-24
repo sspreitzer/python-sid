@@ -28,7 +28,7 @@ from setuptools import setup
 
 setup(
     name = "sid",
-    version = "0.1",
+    version = "0.2",
     author = "Sascha Spreitzer",
     author_email = "sspreitz@redhat.com",
     description = ("Python library to convert Windows SIDs"),
