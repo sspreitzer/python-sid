@@ -9,4 +9,4 @@ print s.base64()
 '''
 
 
-from lib import *
+from .lib import *

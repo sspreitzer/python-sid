@@ -30,7 +30,18 @@ Output
 S-1-5-21-2127521184-1604012920-1887927527-72713
 ```
 
+## Tests
+
+Run tests using
+```
+python -m unittest
+```
+while in the `src/sid` directory.
+
 ## Changelog
+* 0.2
+  * Python 3 support
+  * Added a few tests
 * 0.1
   * Fix docstrings for documentation
   * Add setup.py
