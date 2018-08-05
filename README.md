@@ -1,6 +1,6 @@
 # python-sid
 
-Python library to convert Windows SIDs
+Python library to convert Windows [SIDs](https://en.wikipedia.org/wiki/Security_Identifier)
 
 ## Example
 
