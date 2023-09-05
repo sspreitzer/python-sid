@@ -2,6 +2,11 @@
 
 Python library to convert Windows [SIDs](https://en.wikipedia.org/wiki/Security_Identifier)
 
+## Install
+
+E.g:
+`python3 setup.py install`
+
 ## Example
 
 String input
@@ -22,7 +27,7 @@ Base46 input
 import sid
 
 mysid = sid.sid('AQUAAAAAAAUVAAAAoGXPfnhLm1/nfIdwCRwBAA==', sid.SID_BASE64)
-print mysid
+print(mysid)
 ```
 
 Output
