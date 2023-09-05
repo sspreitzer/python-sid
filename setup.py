@@ -1,4 +1,4 @@
-'''
+"""
 The MIT License (MIT)
 
 Copyright (c) 2015 Sascha Spreitzer, Red Hat
@@ -20,23 +20,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-'''
+"""
 
 
 from setuptools import setup
 
 
 setup(
-    name = "sid",
-    version = "0.2",
-    author = "Sascha Spreitzer",
-    author_email = "sspreitz@redhat.com",
-    description = ("Python library to convert Windows SIDs"),
-    license = "MIT",
-    keywords = "windows sid",
-    url = "https://github.com/sspreitzer/python-sid",
-    package_dir = {'': 'src'},
-    packages = ['sid'],
+    name="sid",
+    version="0.3",
+    author="Sascha Spreitzer",
+    author_email="sspreitz@redhat.com",
+    description=("Python library to convert Windows SIDs"),
+    license="MIT",
+    keywords="windows sid",
+    url="https://github.com/sspreitzer/python-sid",
+    package_dir={"": "src"},
+    packages=["sid"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
